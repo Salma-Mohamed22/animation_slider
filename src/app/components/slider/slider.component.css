@@ -1,0 +1,108 @@
+.slider_container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .prev_button,
+.next_button {
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  width: 30px;
+}
+
+.prev_button {
+  left: 10px;
+}
+
+.next_button {
+  right: 10px;
+}
+.slider_content {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .slider_content_image {
+    height: 4.3vw;
+    min-height: 35px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;  
+    
+  }
+  .slider_content_title {
+    color: #000;
+    font-size: 14px;
+    font-size: clamp(11px,0.92vw,20px);
+    font-weight: 400;
+  }
+  .column {
+    float: left;
+    /* width: 16.66%; */
+    width: calc((100% - (4% * 4))/5);
+    border-radius: 8px;
+    border: 0.5px solid rgba(0, 0, 0, 0.50);
+    background: rgba(255, 242, 242, 0.40);
+    display: flex;
+    flex-direction: column;
+    padding: clamp(8px,0.77vw,20px);
+    gap: clamp(6px,0.7a7vw,20px);
+  }
+  .active-image .gray_gradient {
+    display: block;
+    animation: gradient 6s ease-in-out;
+  }
+  .demo{
+    filter: grayscale(100%);
+    background: lightgray 50% / cover no-repeat;
+  }
+
+  .gray_gradient {
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 37, 37, 0.677);
+  }
+  .gray_gradient img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  
+  } 
+  @keyframes gradient {
+    0%   {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+
+
+
+  @media screen and (max-width:1000px) {
+    .column {
+      width: calc((100% - (4% * 3))/4);
+    }
+  }
+  @media screen and (max-width:630px) {
+    .column {
+      width: calc((100% - (4% * 2))/3);
+    }
+  
+  }
+  @media screen and (max-width:430px) {
+    .column {
+      width: calc((100% - (4% * 1))/2);
+    }
+  }

@@ -1,0 +1,33 @@
+<div class="slider_container">
+    <!-- Previous Button -->
+    <button class="prev_button" (click)="prevSlide()">❮</button>
+  
+    <!-- Slider Content -->
+    <div class="slider_content" (click)="onSliderContentClick(i)">
+      <div
+        class="column"
+        *ngFor="let slide of visibleSlides; let i = index"
+      >
+        <div class="slider_content_image"  [ngClass]="{ 'active-image': currentSlideIndex === i }" >
+          <img
+            class="demo cursor full-img"
+            [src]="slide.thumbnail"
+            [alt]="slide.alt" 
+          />
+          <div class="gray_gradient">
+            <img
+            class="cursor "
+            [src]="slide.thumbnail"
+            [alt]="slide.alt"
+            
+          />
+          </div>
+        </div>
+
+        <h3 class="slider_content_title">{{ slide.alt }}</h3>
+      </div>
+    </div>
+  
+    <!-- Next Button -->
+    <button class="next_button" (click)="nextSlide()">❯</button>
+  </div>

@@ -1,0 +1,22 @@
+<div class="slider_view">
+    <div class="content_text">
+      <h6 class="location">
+        {{ sliderService.getCurrentSlide()?.location }}
+      </h6>
+      <h2 class="title">
+        {{ sliderService.getCurrentSlide()?.title }}
+      </h2>
+      <p class="view_description">
+        {{ sliderService.getCurrentSlide()?.description }}
+      </p>
+    </div>
+  
+    <div class="slider_view_img">
+      <img
+        [src]="sliderService.getCurrentSlide()?.src"
+        [alt]="sliderService.getCurrentSlide()?.alt"
+        style="width: 100%"
+      />
+    </div>
+  </div>
+  
